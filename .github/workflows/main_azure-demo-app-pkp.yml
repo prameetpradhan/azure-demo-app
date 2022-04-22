@@ -21,8 +21,11 @@ jobs:
         with:
           java-version: '8'
 
+      - name: Grant Permissions to gradlew
+        run: chmod +x gradlew
+        
       - name: Build with gradle
-        run: ./gradlew.sh clean build
+        run: ./gradlew clean build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
